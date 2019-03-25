@@ -1,8 +1,9 @@
 @import "variables";
 
 #header{
+  width: 1200px;
+  margin: 0 auto;
   .container{
-    width: 1200px;
     background: $maingreybackground;
     .row{
       padding: 0 19px;
