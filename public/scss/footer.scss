@@ -1,0 +1,35 @@
+@import "variables";
+
+#footer{
+  width: 1200px;
+  height: 116px;
+  background: $footercolor;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  padding-top: 18.01px;
+  box-sizing: border-box;
+
+  .footer_content{
+    width: 308px;
+    height: 73.21px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 11px;
+
+    .footer_logo{
+      margin: 0 auto;
+      box-sizing: border-box;
+      padding-left: 132.27px;
+      img{
+        display: block;
+        width: 37px;
+        height: 41px;
+      }
+    }
+    .footer_terms{
+      margin-top: 5px;
+    }
+  }
+}

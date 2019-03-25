@@ -1,0 +1,89 @@
+@import "variables";
+body, div, dl, dd, dt, ul, li, ol, h1, h2, h3, h4, h5, h6, form, input, legend,
+textarea, select, fieldset, p, button {
+  margin: 0; padding: 0;
+}
+
+/*링크 초기화*/
+a{ color: $navblack; text-decoration: none;}
+
+/*리스트 스타일 초기화*/
+ul, li, ol{list-style: none;}
+
+/*ir 효과*/
+.ir{
+  width: 0; height: 0;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 0; top: 0;
+}
+
+/*이미지 테두리 초기화*/
+img, fieldset{
+  border:0;
+}
+
+/*font 스타일 초기화*/
+em ,address{
+  font-style: normal;
+}
+
+/*시멘틱 태그 블록화*/
+section, article, aside, figure, figcaption, footer, header, menu, nav, details{
+  display: block;
+}
+
+/*반응형 이미지*/
+img, video {
+  width: 100%;
+}
+
+/*가로모드 글씨 초기화*/
+html{
+  font-size: 100%;
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+}
+
+/*button 스타일*/
+button{
+  padding: 3px;
+  border-radius: 20%;
+}
+
+/*clearfix*/
+.clearfix{
+  *zoom: 1;
+
+  &:before, &:after{
+    display: block;
+    content: '';
+    line-height: 0;
+  }
+
+  &:after{
+    clear:both;
+  }
+}
+
+/*익스플로어 버전에 따른 코드 변화!*/
+
+.ie7 .icon-font{
+  display: none;
+}
+
+.ie8 .icon-font li a .tool{
+  display: none;
+}
+
+/* clears the 'X' from Internet Explorer */
+input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }

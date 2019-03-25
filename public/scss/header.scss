@@ -1,0 +1,56 @@
+@import "variables";
+
+#header{
+  .container{
+    width: 1200px;
+    background: $maingreybackground;
+    .row{
+      padding: 0 19px;
+      .sub_header{
+        height: 30px;
+        .logo{
+          float: left;
+          img{
+            display: block;
+            margin-top: 7px;
+            margin-bottom: 8px;
+            height: 15px;
+            width: 16px;
+          }
+        }
+        .sub_detail{
+          float:left;
+          margin-left: 17.49px;
+          margin-top: 7px;
+          height: 11px;
+          font-size: 11px;
+          color: $sub_detail;
+        }
+        .account{
+          float: left;
+          margin-top: 9.9px;
+          margin-bottom: 9.1px;
+          margin-left: 830.48px;
+          font-size: 11px;
+          color: $navblack;
+        }
+      }
+    }
+  }
+  .Logo{
+    height: 194px;
+    width: 1200px;
+    margin: 0 auto;
+    .Logo_pic{
+      padding-top: 57px;
+      padding-bottom: 77px;
+      img{
+        display: block;
+        width: 136px;
+        height: 60px;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+

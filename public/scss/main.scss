@@ -1,0 +1,64 @@
+.main{
+  .Game{
+    width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding-top: 25px;
+    padding-left: 199px;
+
+    .Game_logo.LOL{
+      img{
+        float: left;
+        display: block;
+        width: 47px;
+        height: 35px;
+      }
+      h3{
+        font-size: 10px;
+        font-weight: bold;
+        height: 35px;
+        line-height: 35px;
+      }
+    }
+    .container{
+      margin: 0 auto;
+      box-sizing: border-box;
+      padding-left: 47.4px;
+      padding-top: 25.88px;
+      article{
+        float: left;
+        margin-right: 24.6px;
+        .thumbnail{
+          img{
+            display: block;
+            width: 203.46px;
+            height: 131.68px;
+            border-radius: 8px;
+          }
+        }
+        h3{
+          font-size: 10px;
+          font-weight: bold;
+          margin-top: 6.3px;
+        }
+      }
+      .Paging{
+        float: left;
+        width: 75.48px;
+        height: 179.62px;
+        img{
+          display: block;
+          width: 75.48px;
+          height: 179.62px;
+          -webkit-border-radius: 8px;
+          -moz-border-radius: 8px;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+  .Game.greyground.mt{
+    background: $maingreybackground;
+    margin-top: 25px;
+  }
+}
