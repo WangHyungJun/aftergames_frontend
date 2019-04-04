@@ -1,0 +1,84 @@
+@import "variables";
+
+#main{
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  .container{
+    .loginbox{
+      width: 328px;
+      margin: 0 auto;
+
+      .ID{
+        span{
+          display: inline-block;
+          width: 30px;
+          margin: 0 auto;
+          color: $logintext;
+          border-bottom: 1px solid rgba(0,0,0,.1);
+          padding-bottom: 6.15px;
+        }
+
+        input {
+          display: inline-block;
+          margin: 0 auto;
+          width: 290px;
+          height: 29.5px;
+          margin-bottom: 20.5px;
+          color: $logintext;
+          border-color: transparent;
+          border: 0;
+          border-bottom: 1px solid rgba(0,0,0,.1);
+
+          &:focus{
+            outline: none;
+          }
+        }
+      }
+      .PW{
+        span{
+          display: inline-block;
+          margin: 0 auto;
+          width: 30px;
+          color: $logintext;
+          border-bottom: 1px solid rgba(0,0,0,.1);
+          padding-bottom: 6.15px;
+        }
+
+        input {
+          display: inline-block;
+          margin: 0 auto;
+          width: 290px;
+          height: 29.5px;
+          margin-bottom: 20.5px;
+          color: $logintext;
+          border-color: transparent;
+          border: 0;
+          border-bottom: 1px solid rgba(0,0,0,.1);
+
+          &:focus{
+            outline: none;
+          }
+        }
+      }
+      .buttons{
+        a{
+          display: block;
+          float: left;
+          width: 94px;
+          height: 36px;
+          text-align: center;
+          margin-right: 23px;
+          color: $navmadarine;
+          padding-top: 8px;
+          background: $buttonbackgroundcolor;
+          font-size: 14px;
+
+          &:last-child{
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

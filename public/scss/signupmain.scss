@@ -1,0 +1,41 @@
+@import "variables";
+
+#main{
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  .signupform{
+    width: 455px;
+    margin: 0 auto;
+    .item{
+      height: 30px;
+      margin-bottom: 25px;
+
+      label{
+        display: inline-block;
+        width: 171px;
+      }
+      input{
+        display: inline-block;
+        width: 278px;
+        border: 0;
+        border-bottom: 1px solid $navmadarine;
+        padding-bottom: 9px;
+
+        &:focus{
+          outline: none;
+        }
+      }
+    }
+    a{
+      margin: 0 auto;
+      display: block;
+      width: 94px;
+      height: 36px;
+      text-align: center;
+      padding-top: 8px;
+      color: $navmadarine;
+      background: $buttonbackgroundcolor;
+    }
+  }
+}

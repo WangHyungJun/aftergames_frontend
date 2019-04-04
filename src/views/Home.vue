@@ -1,23 +1,6 @@
 <template>
   <div class="home">
-    <header id="header">
-      <div class="container clearfix">
-        <div class="row">
-          <section class="sub_header">
-            <div class="logo"><img src="../../public/img/jake.jpg"/></div>
-            <div class="sub_detail">After games 설명글이 들어갈 자리</div>
-            <div class="account">
-              <a href="#">로그인 | </a>
-              <a href="#">회원가입 </a>
-            </div>
-          </section>
-        </div>
-      </div>
-      <section class="Logo">
-        <div class="Logo_pic"><img src="../../public/img/jake.jpg"/></div>
-      </section>
-    </header>
-    <!--//header-->
+    <appheader></appheader>
     <nav id="nav">
       <div class="main_nav">
         <ul class="clearfix">
@@ -180,29 +163,19 @@
       </section>
     </section>
     <!--//main-->
-    <footer id="footer">
-      <div class="footer_content clearfix">
-        <div class="footer_logo">
-          <img src="../../public/img/jake.jpg" alt="aftergames"/>
-        </div>
-        <div class="footer_terms">
-          <a href="#">회사소개 |</a>
-          <a href="#">제품안내 |</a>
-          <a href="#">이용약관 |</a>
-          <a href="#">개인정보처리방침 |</a>
-          <a href="#">운영정책</a>
-        </div>
-        <div class="footer_email">
-          Aftergames@gf.co.kr
-        </div>
-      </div>
-    </footer>
-    <!--//footer-->
+    <appfooter></appfooter>
   </div>
+  <!--//home-->
 </template>
 
 <script>
+  import appheader from "../components/all/header"
+  import appfooter from "../components/all/footer"
 export default {
+    components:{
+      "appheader": appheader,
+      "appfooter": appfooter
+    }
 
 };
 </script>
