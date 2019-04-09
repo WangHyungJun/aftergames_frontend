@@ -1,0 +1,195 @@
+@import "variables";
+
+.main{
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-top: 25px;
+
+  .Game {
+    padding: 0 30px;
+
+    .Game_logo.LOL {
+      display: none;
+
+      img {
+        float: left;
+        display: block;
+        width: 47px;
+        height: 35px;
+      }
+      h3 {
+        font-size: 10px;
+        font-weight: bold;
+        height: 35px;
+        line-height: 35px;
+      }
+    }
+
+    .filter {
+      width: 1024px;
+      max-width: 1024px;
+      margin-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
+
+      select {
+        border: 1px solid $selectborder;
+        color: $selectfontcolor;
+      }
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1024px;
+      margin-top: 55px;
+
+      .row {
+        article {
+          float: left;
+          margin-right: 34.61px;
+          margin-left: 34.61px;
+          margin-bottom: 35px;
+          box-shadow: 1.5px 2.6px 6px rgba(0, 0, 0, .1);
+          height: 318.64px;
+          width: 255.03px;
+
+          .thumbnail {
+            img {
+              display: block;
+              width: 255.03px;
+              height: 163.87px;
+            }
+          }
+
+          .title{
+            margin-top: 23px;
+            font-size: 10.92px;
+            height: 30px;
+            line-height: 30px;
+            border-bottom: 1px solid $navmadarine;
+            margin-left: 8.84px;
+            margin-right: 8.84px;
+          }
+
+          .sub_title{
+            font-size: 10px;
+            margin-left: 8.84px;
+            margin-top: 15.54px;
+          }
+
+          &:nth-child(3n+0) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+  .pages{
+    width: 150px;
+    margin: 0 auto;
+    height: 30px;
+
+    .pages_number{
+      float: left;
+      width: 109px;
+      a{
+        display: block;
+        float: left;
+        width: (100%/5);
+      }
+    }
+    .pages_arrows{
+      float: left;
+      a{
+        display: block;
+        float: left;
+        width: 17.03px;
+        height: 17.03px;
+        line-height: 17.03px;
+        background: #F3F3F3;
+        border: 1px solid #DFDFDF;
+        box-sizing: border-box;
+        text-align: center;
+        transform: translateY(20%);
+        margin-right: 2px;
+        border-radius: 4px;
+
+        i{
+          color: #696969;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px){
+  .main{
+    .Game{
+      .Game_logo.LOL{
+        display: block;
+      }
+
+      .filter{
+        display: none;
+      }
+
+      .container{
+        .row{
+          article{
+            margin-right: 17.43px;
+            margin-left: 17.43px;
+            width:calc((100% - 140px)/4);
+            height: 160.49px;
+            box-sizing: border-box;
+
+            .thumbnail{
+              img{
+                width: 100%;
+                height: 82.54px;
+              }
+            }
+
+            .title{
+              margin-top: 5px;
+              font-size: 5px;
+            }
+
+            .sub_title{
+              margin-top: 5px;
+              font-size: 5px;
+            }
+
+            &:nth-child(3n+0){
+              margin-right: 17.43px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 690px){
+  .main{
+    .Game{
+      .container{
+        .row{
+          article{
+            width:calc((100% - 70px)/2);
+            height: 160.49px;
+            box-sizing: border-box;
+
+            .thumbnail{
+              img{
+                width: 100%;
+                height: 82.54px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
