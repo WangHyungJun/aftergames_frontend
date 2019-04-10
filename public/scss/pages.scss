@@ -1,0 +1,36 @@
+.pages{
+  width: 150px;
+  margin: 0 auto;
+  height: 30px;
+
+  .pages_number{
+    float: left;
+    width: 109px;
+    a{
+      display: block;
+      float: left;
+      width: (100%/5);
+    }
+  }
+  .pages_arrows{
+    float: left;
+    a{
+      display: block;
+      float: left;
+      width: 17.03px;
+      height: 17.03px;
+      line-height: 17.03px;
+      background: #F3F3F3;
+      border: 1px solid #DFDFDF;
+      box-sizing: border-box;
+      text-align: center;
+      transform: translateY(20%);
+      margin-right: 2px;
+      border-radius: 4px;
+
+      i{
+        color: #696969;
+      }
+    }
+  }
+}

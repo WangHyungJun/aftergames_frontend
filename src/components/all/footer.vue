@@ -21,10 +21,9 @@
 
 <script>
     export default {
-        name: "footer"
+        name: "appfooter"
     }
 </script>
-
 <style lang="scss" scoped>
     @import "../../../public/scss/footer";
 </style>

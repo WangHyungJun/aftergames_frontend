@@ -3,6 +3,7 @@ import Router from "vue-router";
 import Home from "./views/Home.vue";
 import LogIn from "./views/login";
 import SignUp from "./views/signup";
+import game from "./views/game";
 
 Vue.use(Router);
 
@@ -33,6 +34,11 @@ export default new Router({
       path: "/signup",
       name: "signup",
       component: SignUp
+    },
+    {
+      path:"/game/:id",
+      name: "game",
+      component: game
     }
   ]
 });

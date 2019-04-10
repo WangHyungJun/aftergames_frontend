@@ -1,33 +1,44 @@
+@import "variables";
+
 .main{
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-top: 25px;
+
   .Game{
-    width: 1200px;
-    margin: 0 auto;
     box-sizing: border-box;
     padding-top: 25px;
-    padding-left: 199px;
+    width: 100%;
 
-    .Game_logo.LOL{
-      img{
-        float: left;
-        display: block;
-        width: 47px;
-        height: 35px;
-      }
-      h3{
-        font-size: 10px;
-        font-weight: bold;
-        height: 35px;
-        line-height: 35px;
-      }
-    }
     .container{
-      margin: 0 auto;
+      width: 820px;
       box-sizing: border-box;
-      padding-left: 47.4px;
-      padding-top: 25.88px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0;
+
+      .Game_logo.LOL{
+        transform: translateX(-9%);
+        margin-bottom: 26px;
+        img{
+          float: left;
+          display: block;
+          width: 47px;
+          height: 35px;
+        }
+        h3{
+          font-size: 10px;
+          font-weight: bold;
+          height: 35px;
+          line-height: 35px;
+        }
+      }
+
       article{
         float: left;
         margin-right: 24.6px;
+
         .thumbnail{
           img{
             display: block;
@@ -41,11 +52,16 @@
           font-weight: bold;
           margin-top: 6.3px;
         }
+        &:nth-child(3n+0){
+          margin-right: 18px;
+        }
       }
       .Paging{
         float: left;
         width: 75.48px;
         height: 179.62px;
+        margin-right: 0;
+
         img{
           display: block;
           width: 75.48px;
@@ -60,5 +76,84 @@
   .Game.greyground.mt{
     background: $maingreybackground;
     margin-top: 25px;
+  }
+}
+
+@media (max-width: 1024px){
+  .main{
+    .Game{
+      .container{
+        width: 100%;
+        margin: 0 auto;
+        .Game_logo.LOL {
+          transform: none;
+          padding-left: 3%;
+        }
+
+        .row{
+          margin-left: 45.62px;
+
+          article{
+            margin-right: 45px;
+            width: 25%;
+
+            .thumbnail{
+              width: 100%;
+              img{
+                width: 100%;
+              }
+
+            }
+            &:nth-child(3n+0){
+              margin-right: 12.19px;
+            }
+          }
+          .Paging{
+            width: 23px;
+            img{
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 690px){
+  .main{
+    .Game{
+      .container{
+        .Game_logo.LOL {
+          padding-left: 3%;
+        }
+
+        .row{
+          margin-left: 15.62px;
+
+          article{
+            margin-right: 5px;
+            width: 41.3%;
+
+            .thumbnail{
+              width: 100%;
+              img{
+                width: 100%;
+              }
+
+            }
+            &:nth-child(3n+0){
+              display: none;
+            }
+          }
+          .Paging{
+            width: 8.3%;
+            img{
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
   }
 }

@@ -3,6 +3,7 @@
         <div class="container clearfix">
             <div class="row">
                 <section class="sub_header">
+                    <i class="fas fa-ellipsis-v"></i>
                     <div class="logo"><img src="../../../public/img/aftergameslogo.png"/></div>
                     <div class="sub_detail">After games 설명글이 들어갈 자리</div>
                     <div class="account">
@@ -21,11 +22,9 @@
 
 <script>
     export default {
-        name: "header"
+        name: "appheader"
     }
 </script>
-
 <style lang="scss" scoped>
     @import "../../../public/scss/header";
-
 </style>
