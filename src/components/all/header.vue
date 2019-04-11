@@ -3,7 +3,7 @@
         <div class="container clearfix">
             <div class="row">
                 <section class="sub_header">
-                    <i class="fas fa-ellipsis-v"></i>
+                    <i v-on:click="showside" class="fas fa-ellipsis-v"></i>
                     <div class="logo"><img src="../../../public/img/aftergameslogo.png"/></div>
                     <div class="sub_detail">After games 설명글이 들어갈 자리</div>
                     <div class="account">
@@ -21,8 +21,15 @@
 </template>
 
 <script>
+    import {bus} from "../../main"
+
     export default {
-        name: "appheader"
+        name: "appheader",
+        methods: {
+            showside: function () {
+                bus.$emit("showside",{});
+            }
+        }
     }
 </script>
 <style lang="scss" scoped>
