@@ -5,25 +5,25 @@
         </div>
         <div class="game_menu">
             <ul>
-                <li>
+                <li v-on:click="hidebar">
                     <img src="../../../public/img/LOL.jpg" alt="LOL">
-                    <router-link to="game/lol">lol</router-link>
+                    <router-link v-bind:to="'/game/'+ games[0]" exact>이달의 게임</router-link>
                 </li>
-                <li>
+                <li v-on:click="hidebar">
                     <img src="../../../public/img/pubg.jpg" alt="pubg">
-                    <a href="lol.html">배틀그라운드</a>
+                    <router-link v-bind:to="'/game/'+ games[1]" exact>LOL</router-link>
                 </li>
-                <li>
+                <li v-on:click="hidebar">
                     <img src="../../../public/img/fifaonline.jpg" alt="fifa">
-                    <a href="lol.html">피파온라인</a>
+                    <router-link v-bind:to="'/game/'+ games[2]" exact>PUBG</router-link>
                 </li>
-                <li>
+                <li v-on:click="hidebar">
                     <img src="../../../public/img/하스스톤.png" alt="하스스톤">
-                    <a href="lol.html">하스스톤</a>
+                    <router-link v-bind:to="'/game/'+ games[3]" exact>FIFA</router-link>
                 </li>
-                <li>
+                <li v-on:click="hidebar">
                     <img src="../../../public/img/aftergameslogo.png" alt="After Games">
-                    <a href="lol.html">이달의게임</a>
+                    <router-link v-bind:to="'/game/'+ games[4]" exact>Hearh Stone</router-link>
                 </li>
             </ul>
         </div>
@@ -35,6 +35,11 @@
 
 export default {
     name: "sidebar",
+    data(){
+        return {
+            games: ['recommendation','lol', 'pubg', 'fifa', 'hearthstone']
+        }
+    },
     mounted() {
         var com=this.$refs.aside;
         bus.$on("showside", function () {

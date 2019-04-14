@@ -41,6 +41,10 @@
         height: 47px;
         line-height: 47px;
         margin-left: 18.19px;
+
+        &.router-link-exact-active{
+          color: $navmadarine;
+        }
       }
     }
   }

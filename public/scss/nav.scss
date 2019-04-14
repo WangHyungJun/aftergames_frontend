@@ -34,9 +34,15 @@
           vertical-align: middle;
         }
 
-        .is-active{
-          border-bottom: 1px solid $navmadarine;
-          a{
+        a{
+          display: block;
+          float: left;
+          height: 100%;
+          line-height: 48px;
+          width: 100%;
+
+          &.router-link-exact-active{
+            border-bottom: 1px solid $navmadarine;
             color: $navmadarine;
           }
         }
