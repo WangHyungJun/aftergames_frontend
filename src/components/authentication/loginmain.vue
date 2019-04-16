@@ -8,10 +8,10 @@
                 <div class="PW">
                     <span>PW</span><input type="password"/>
                 </div>
-                <div class="buttons">
+                <div class="buttons clearfix">
                     <a>아이디 찾기</a>
                     <a>비밀번호 찾기</a>
-                    <a href="#">회원가입</a>
+                    <router-link to="signup">회원가입</router-link>
                 </div>
             </div>
         </div>
@@ -23,3 +23,7 @@
         name: "loginmain"
     }
 </script>
+
+<style lang="scss" scoped>
+    @import "../../../public/scss/loginmain";
+</style>

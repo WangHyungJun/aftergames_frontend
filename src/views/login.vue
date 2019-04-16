@@ -1,23 +1,7 @@
 <template>
     <div class="login">
         <appheader></appheader>
-        <section id="main">
-            <div class="container">
-                <div class="loginbox clearfix">
-                    <div class="ID">
-                        <span>ID</span><input type="text"/>
-                    </div>
-                    <div class="PW">
-                        <span>PW</span><input type="password"/>
-                    </div>
-                    <div class="buttons">
-                        <a>아이디 찾기</a>
-                        <a>비밀번호 찾기</a>
-                        <a href="#">회원가입</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <loginmain></loginmain>
         <appfooter></appfooter>
     </div>
 </template>
@@ -25,15 +9,14 @@
 <script>
     import appheader from "../components/all/header"
     import appfooter from "../components/all/footer"
+    import loginmain from "../components/authentication/loginmain"
+
     export default {
         components:{
             "appheader": appheader,
+            "loginmain": loginmain,
             "appfooter": appfooter
         }
 
     };
 </script>
-
-<style lang="scss">
-    @import "../../public/scss/login";
-</style>
