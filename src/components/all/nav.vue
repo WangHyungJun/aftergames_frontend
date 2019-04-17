@@ -3,7 +3,7 @@
         <div class="main_nav">
             <ul class="clearfix">
                 <li><router-link to="/" exact>HOME</router-link></li>
-                <li><router-link v-bind:to="'/game/'+ games[0]" exact>이달의 게임</router-link></li>
+                <li><router-link v-bind:to="'/blog/'+ 1" exact>이달의 게임</router-link></li>
                 <li><router-link v-bind:to="'/game/'+ games[1]" exact>LOL</router-link></li>
                 <li><router-link v-bind:to="'/game/'+ games[2]" exact>PUBG</router-link></li>
                 <li><router-link v-bind:to="'/game/'+ games[3]" exact>FIFA</router-link></li>

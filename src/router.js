@@ -4,6 +4,7 @@ import Home from "./views/Home.vue";
 import LogIn from "./views/login";
 import SignUp from "./views/signup";
 import game from "./views/game";
+import blog from "./views/blog";
 
 Vue.use(Router);
 
@@ -36,9 +37,14 @@ export default new Router({
       component: SignUp
     },
     {
-      path:"/game/:id",
+      path: "/game/:id",
       name: "game",
       component: game
+    },
+    {
+      path: "/blog/:id",
+      name: "blog",
+      component: blog
     }
   ]
 });

@@ -11,6 +11,7 @@
     .item{
       height: 30px;
       margin-bottom: 25px;
+      position: relative;
 
       label{
         display: inline-block;
@@ -26,6 +27,13 @@
         &:focus{
           outline: none;
         }
+      }
+      .errormessage{
+        position: absolute;
+        left: 37%;
+        margin-top: 6px;
+        color: $errorcolor;
+        font-size: 12px;
       }
     }
     a{
