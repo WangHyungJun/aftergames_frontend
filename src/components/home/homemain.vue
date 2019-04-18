@@ -22,9 +22,9 @@
                         <h3>블로그</h3>
                         <h3>라이엇게임즈, 롤을 잇는 후속작은 MMO?</h3>
                     </article>
-                    <div class="Paging">
-                        <img src="../../../public/img/arrorright.jpg" alt="right">
-                    </div>
+                    <router-link v-bind:to="'/game/'+ games[1]" exact class="Paging">
+                        <img src="../../../public/img/화살표.png" alt="right">
+                    </router-link>
                 </div>
             </div>
         </section>
@@ -50,9 +50,9 @@
                         <h3>블로그</h3>
                         <h3>라이엇게임즈, 롤을 잇는 후속작은 MMO?</h3>
                     </article>
-                    <div class="Paging">
-                        <img src="../../../public/img/manplayinggame.jpg" alt="right">
-                    </div>
+                    <router-link v-bind:to="'/game/'+ games[2]" exact class="Paging">
+                        <img src="../../../public/img/화살표.png" alt="right">
+                    </router-link>
                 </div>
             </div>
         </section>
@@ -78,9 +78,9 @@
                         <h3>블로그</h3>
                         <h3>라이엇게임즈, 롤을 잇는 후속작은 MMO?</h3>
                     </article>
-                    <div class="Paging">
-                        <img src="../../../public/img/manplayinggame.jpg" alt="right">
-                    </div>
+                    <router-link v-bind:to="'/game/'+ games[3]" exact class="Paging">
+                        <img src="../../../public/img/화살표.png" alt="right">
+                    </router-link>
                 </div>
             </div>
         </section>
@@ -106,9 +106,9 @@
                         <h3>블로그</h3>
                         <h3>라이엇게임즈, 롤을 잇는 후속작은 MMO?</h3>
                     </article>
-                    <div class="Paging">
-                        <img src="../../../public/img/manplayinggame.jpg" alt="right">
-                    </div>
+                    <router-link v-bind:to="'/game/'+ games[4]" exact class="Paging">
+                        <img src="../../../public/img/화살표.png" alt="right">
+                    </router-link>
                 </div>
             </div>
         </section>
@@ -134,9 +134,9 @@
                         <h3>블로그</h3>
                         <h3>라이엇게임즈, 롤을 잇는 후속작은 MMO?</h3>
                     </article>
-                    <div class="Paging">
-                        <img src="../../../public/img/manplayinggame.jpg" alt="right">
-                    </div>
+                    <router-link to="'/blog/'+ 1" exact class="Paging">
+                        <img src="../../../public/img/화살표.png" alt="right">
+                    </router-link>
                 </div>
             </div>
         </section>
@@ -145,9 +145,17 @@
 </template>
 
 <script>
-    export default {
-        name: "homemain"
-    }
+export default {
+ name: "homemain",
+ computed:{
+  games(){
+   return this.$store.state.games;
+  }
+ },
+ created(){
+   console.log(this.games);
+ }
+}
 </script>
 <style lang="scss" scoped>
     @import "../../../public/scss/main";

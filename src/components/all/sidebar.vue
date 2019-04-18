@@ -23,7 +23,7 @@
                 </li>
                 <li v-on:click="hidebar">
                     <img src="../../../public/img/aftergameslogo.png" alt="After Games">
-                    <router-link v-bind:to="'/game/'+ games[0]" exact>이달의 게임</router-link>
+                    <router-link v-bind:to="'/blog/'+ 1" exact>이달의 게임</router-link>
                 </li>
             </ul>
         </div>

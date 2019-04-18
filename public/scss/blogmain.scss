@@ -8,7 +8,7 @@
 
   .logo_filter{
     width: 840px;
-    height: 58px;
+    height: 70px;
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
@@ -37,6 +37,7 @@
     .filter {
       position: absolute;
       right: 0;
+      bottom: 15px;
       select {
         float: right;
         border: 1px solid $selectborder;
