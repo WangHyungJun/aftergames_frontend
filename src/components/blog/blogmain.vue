@@ -91,6 +91,9 @@
         name: "blogmain",
         components: {
             'pages': pages
+        },
+        created(){
+            console.log(this.$store.state.token);
         }
     }
 </script>

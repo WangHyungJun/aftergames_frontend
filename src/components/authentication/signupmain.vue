@@ -2,9 +2,14 @@
   <section id="main">
     <section class="signupform">
       <div class="item">
-        <label>아이디</label>
-        <input ref="id_input" v-model="loginform.userid" type="text" />
-        <div class="errormessage">{{ this.iderror }}</div>
+        <label>이메일</label>
+        <input
+                ref="email_input"
+                v-model="loginform.email"
+                type="text"
+                placeholder="example@gmail.com"
+        />
+        <div class="errormessage">{{ this.emailerror }}</div>
       </div>
       <div class="item">
         <label>비밀번호</label>
@@ -19,16 +24,6 @@
           type="password"
         />
         <div class="errormessage">{{ this.passwordcheckerror }}</div>
-      </div>
-      <div class="item">
-        <label>이메일 주소</label>
-        <input
-          ref="email_input"
-          v-model="loginform.email"
-          type="text"
-          placeholder="example@gmail.com"
-        />
-        <div class="errormessage">{{ this.emailerror }}</div>
       </div>
       <div class="item">
         <label>닉네임</label>
@@ -54,14 +49,12 @@ export default {
     return {
       apiurl: "http://127.0.0.1:8000/aftergamesapi/users",
       loginform: {
-        userid: "",
         email: "",
         nickname: "",
         password: "",
         checkpassword: ""
       },
       successmessage: "",
-      iderror: "",
       passworderror: "",
       emailerror: "",
       nicknameerror: "",
@@ -72,18 +65,15 @@ export default {
   methods: {
     submit: function(e) {
       e.preventDefault();
-      if (this.loginform.userid === "") {
-        this.iderror = "아이디를 입력해주세요";
-        return this.iderror;
+
+      if (this.loginform.email === "") {
+        return (this.emailerror = "이메일을 입력해주세요");
       }
       if (this.loginform.password === "") {
         return (this.passworderror = "비밀번호를 입력해주세요");
       }
       if (this.loginform.checkpassword === "") {
         return (this.passwordcheckerror = "비밀번호 확인을 입력해주세요");
-      }
-      if (this.loginform.email === "") {
-        return (this.emailerror = "이메일을 입력해주세요");
       }
       if (this.loginform.nickname === "") {
         return (this.nicknameerror = "닉네임을 입력해주세요");
@@ -96,24 +86,20 @@ export default {
         return alert("회원가입이 진행 중입니다. 잠시만 기다려주세요.");
       }
       if (
-        this.iderror === "" &&
         this.passworderror === "" &&
         this.passwordcheckerror === "" &&
         this.emailerror === "" &&
         this.nicknameerror === ""
       ) {
-        this.signupprocess = true;
         this.$http
           .post(this.apiurl, {
-            userid: this.loginform.userid,
             email: this.loginform.email,
-            nickname: this.loginform.nickname,
+            username: this.loginform.nickname,
             password: this.loginform.password,
             checkpassword: this.loginform.checkpassword
           })
           .then(function(data) {
             if (data.body["error"] !== undefined) {
-              this.signupprocess = false;
               return alert(data.body["error"]);
             } else {
               alert(data.body["success"]);
@@ -126,16 +112,18 @@ export default {
     },
     ...mapActions(["validateEmail"])
   },
+  created(){
+    console.log(this.$store.state.token);
+  },
   beforeUpdate() {
-    if (
-      this.loginform.userid.length < 3 &&
-      this.loginform.userid.length !== 0
-    ) {
-      this.iderror = "아이디는 3글자 이상으로 정해주세요.";
-    } else if (this.iderror === "아이디는 3글자 이상으로 정해주세요.") {
-      this.iderror = "";
+    if (this.loginform.email !== "") {
+      this.validateEmail(this.loginform.email).then(res => {
+        this.emailerror = res;
+      });
+    } else if (this.emailerror === "이메일을 입력해주세요") {
+      ;
     } else {
-     ;
+      this.emailerror = "";
     }
 
     if (
@@ -152,28 +140,18 @@ export default {
     if (this.loginform.nickname !== "") {
       this.nicknameerror = "";
     }
-
-    if (this.loginform.email !== "") {
-      this.validateEmail(this.loginform.email).then(res => {
-        this.emailerror = res;
-      });
-    } else if (this.emailerror === "이메일을 입력해주세요") {
-      ;
-    } else {
-      this.emailerror = "";
-    }
   },
+
   updated() {
-    const id_input = this.$refs.id_input;
+    const email_input = this.$refs.email_input;
     const pw_input = this.$refs.pw_input;
     const pwc_input = this.$refs.pwc_input;
-    const email_input = this.$refs.email_input;
     const nickname_input = this.$refs.nickname_input;
 
-    if (this.iderror !== "") {
-      id_input.style.borderBottomColor = "#FF6E6E";
+    if (this.emailerror !== "") {
+      email_input.style.borderBottomColor = "#FF6E6E";
     } else {
-      id_input.style.borderBottomColor = "#FF981F";
+      email_input.style.borderBottomColor = "#FF981F";
     }
 
     if (this.passworderror !== "") {
@@ -186,12 +164,6 @@ export default {
       pwc_input.style.borderBottomColor = "#FF6E6E";
     } else {
       pwc_input.style.borderBottomColor = "#FF981F";
-    }
-
-    if (this.emailerror !== "") {
-      email_input.style.borderBottomColor = "#FF6E6E";
-    } else {
-      email_input.style.borderBottomColor = "#FF981F";
     }
 
     if (this.nicknameerror !== "") {
