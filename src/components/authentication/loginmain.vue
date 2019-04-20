@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import { bus } from '../../main';
+
 export default {
   name: "loginmain",
   data() {
@@ -47,7 +49,8 @@ export default {
             localStorage.setItem("token", token);
             const username = data.body["username"];
             localStorage.setItem("nickname", username);
-            this.$router.push({ name: "home" });
+            this.$router.push({name: 'home'});
+            this.$forceUpdate();
           }
         });
     }
