@@ -7,13 +7,15 @@
   margin: 0 auto;
   .container{
     .loginbox{
-      width: 328px;
+      max-width: 328px;
+      width: 100%;
       margin: 0 auto;
 
       .ID{
         span{
           display: inline-block;
-          width: 60px;
+          max-width: 60px;
+          width: 20%;
           margin: 0 auto;
           color: $logintext;
           border-bottom: 1px solid rgba(0,0,0,.1);
@@ -23,7 +25,8 @@
         input {
           display: inline-block;
           margin: 0 auto;
-          width: 260px;
+          max-width: 260px;
+          width: calc(80% - 10px);
           height: 29.5px;
           margin-bottom: 20.5px;
           color: $logintext;
@@ -40,7 +43,8 @@
         span{
           display: inline-block;
           margin: 0 auto;
-          width: 60px;
+          max-width: 60px;
+          width: 20%;
           color: $logintext;
           border-bottom: 1px solid rgba(0,0,0,.1);
           padding-bottom: 6.15px;
@@ -49,7 +53,8 @@
         input {
           display: inline-block;
           margin: 0 auto;
-          width: 260px;
+          max-width: 260px;
+          width: calc(80% - 10px);
           height: 29.5px;
           margin-bottom: 20.5px;
           color: $logintext;
@@ -63,21 +68,25 @@
         }
       }
       .buttons{
-        a{
+        padding-left: 100px;
+        position: relative;
+        .loginbutton{
           display: block;
+          margin: 0 auto;
           float: left;
           width: 94px;
           height: 36px;
           text-align: center;
-          margin-right: 23px;
           color: $navmadarine;
           padding-top: 8px;
           background: $buttonbackgroundcolor;
           font-size: 14px;
-
-          &:last-child{
-            margin-right: 0;
-          }
+        }
+        .small_button{
+          position: absolute;
+          font-size: 11px;
+          right: 0;
+          transform: translateY(-13px);
         }
       }
     }

@@ -48,3 +48,21 @@
     }
   }
 }
+
+@media (max-width: 528px) {
+  #main{
+    .signupform{
+      width: 300px;
+      
+      .item{
+        label{
+          width: 100px;
+          font-size: 12px;
+        }
+        input{
+          width: 170px;
+        }
+      }
+    }
+  }
+}

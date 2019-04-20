@@ -9,11 +9,12 @@
           <span>PW</span><input type="password" v-model="password" />
         </div>
         <div class="buttons clearfix">
-          <a>아이디 찾기</a>
-          <a>비밀번호 찾기</a>
-          <router-link to="signup">회원가입</router-link>
+          <a class="loginbutton" href="#" v-on:click="login">로그인</a>
+          <div class="small_button">
+            <a href="#">비밀번호 찾기 | </a>
+            <router-link href="#" to="/signup" exact>회원가입</router-link>
+          </div>
         </div>
-        <button v-on:click="login">로그인</button>
       </div>
     </div>
   </section>
