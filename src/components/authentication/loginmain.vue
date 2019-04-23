@@ -25,7 +25,7 @@ export default {
   name: "loginmain",
   data() {
     return {
-      url: "http://127.0.0.1:8000/aftergamesapi/login",
+      url: "https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/login",
       email: "",
       password: ""
     };
@@ -33,7 +33,7 @@ export default {
   methods: {
     login: function() {
       this.$http
-        .post("http://127.0.0.1:8000/aftergamesapi/login", {
+        .post("https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/login", {
           email: this.email,
           password: this.password
         })

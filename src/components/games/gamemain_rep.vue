@@ -58,7 +58,7 @@ export default {
       e.preventDefault();
       if (selected !== "" && selected !== "필터") {
         this.$http
-          .post("http://127.0.0.1:8000/aftergamesapi/games", {
+          .post("https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/games", {
             filter: selected,
             game: this.id
           })
@@ -67,7 +67,7 @@ export default {
           });
       } else {
         this.$http
-          .post("http://127.0.0.1:8000/aftergamesapi/games", {
+          .post("https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/games", {
             game: this.id
           })
           .then(function(data) {
@@ -78,7 +78,7 @@ export default {
   },
   created() {
     this.$http
-      .get("http://127.0.0.1:8000/aftergamesapi/games", {
+      .get("https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/games", {
         params: { game: this.id, page: this.current_page }
       })
       .then(function(data) {
@@ -87,7 +87,7 @@ export default {
         this.last_lst = data.body["last_lst"];
       });
     this.$http
-      .get("http://127.0.0.1:8000/aftergamesapi/gameone", {
+      .get("https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/gameone", {
         params: { game: this.id }
       })
       .then(function(data) {
@@ -99,7 +99,7 @@ export default {
       this.id = to.params.id;
       this.current_page = to.params.page;
       this.$http
-        .get("http://127.0.0.1:8000/aftergamesapi/games", {
+        .get("https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/games", {
           params: { game: this.id, page: this.current_page }
         })
         .then(function(data) {
@@ -108,7 +108,7 @@ export default {
           this.last_lst = data.body["last_lst"];
         });
       this.$http
-        .get("http://127.0.0.1:8000/aftergamesapi/gameone", {
+        .get("https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/gameone", {
           params: { game: this.id }
         })
         .then(function(data) {

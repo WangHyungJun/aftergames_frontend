@@ -47,7 +47,7 @@ export default {
   name: "signupmain",
   data() {
     return {
-      apiurl: "http://127.0.0.1:8000/aftergamesapi/users",
+      apiurl: "https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/users",
       loginform: {
         email: "",
         nickname: "",

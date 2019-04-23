@@ -35,12 +35,12 @@ export default {
   },
   created() {
     this.$http
-      .get("http://127.0.0.1:8000/aftergamesapi/gamelist")
+      .get("https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/gamelist")
       .then(function(data) {
         this.games = data.body;
       });
     this.$http
-      .get("http://127.0.0.1:8000/aftergamesapi/homeapi")
+      .get("https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/homeapi")
       .then(function(data) {
         this.all_res_include_data = data.body;
       });

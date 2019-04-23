@@ -45,7 +45,7 @@ export default {
   },
   created() {
     this.$http
-      .get("http://127.0.0.1:8000/aftergamesapi/gamelist")
+      .get("https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/gamelist")
       .then(function(data) {
         this.games = data.body.slice(0, 4);
       });
