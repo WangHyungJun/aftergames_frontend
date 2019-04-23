@@ -1,162 +1,52 @@
 <template>
-    <section class="main clearfix">
-        <section class="Game">
-            <div class="container">
-                <div class="Game_logo LOL clearfix">
-                    <img src="../../../public/img/LOL.jpg" alt="리그오브레전드">
-                    <h3>리그오브레전드</h3>
-                </div>
-                <div class="row clearfix">
-                    <article>
-                        <div class="thumbnail"><img src="../../../public/img/LOL1.jpg" alt="Lol1"></div>
-                        <h3>뉴스</h3>
-                        <h3>눈길 가는 이색 종목</h3>
-                    </article>
-                    <article>
-                        <div class="thumbnail"><img src="../../../public/img/LOL2.jpg" alt="Lol2"></div>
-                        <h3>유튜브</h3>
-                        <h3>떴다! 8.16 패치노트</h3>
-                    </article>
-                    <article>
-                        <div class="thumbnail"><img src="../../../public/img/LOL3.jpg" alt="Lol3"></div>
-                        <h3>블로그</h3>
-                        <h3>라이엇게임즈, 롤을 잇는 후속작은 MMO?</h3>
-                    </article>
-                    <router-link v-bind:to="'/game/'+ games[1]" exact class="Paging">
-                        <img src="../../../public/img/화살표.png" alt="right">
-                    </router-link>
-                </div>
+  <section class="main clearfix">
+    <section class="Game" v-for="each_dic in all_res_include_data">
+      <div class="container">
+        <div class="Game_logo LOL clearfix">
+          <img v-bind:src="each_dic.logo" v-bind:alt="each_dic.name" />
+          <h3>{{ each_dic.kor_name }}</h3>
+        </div>
+        <div class="row clearfix">
+          <article v-for="each_dic_data in each_dic.data">
+            <div class="thumbnail">
+              <img v-bind:src="each_dic_data.thumbnail" alt="Lol1" />
             </div>
-        </section>
-        <section class="Game greyground mt">
-            <div class="container">
-                <div class="Game_logo LOL clearfix">
-                    <img src="../../../public/img/pubg.jpg" alt="PUBG">
-                    <h3>배틀그라운드</h3>
-                </div>
-                <div class="row clearfix">
-                    <article>
-                        <div class="thumbnail"><img src="../../../public/img/LOL1.jpg" alt="Lol1"></div>
-                        <h3>뉴스</h3>
-                        <h3>눈길 가는 이색 종목</h3>
-                    </article>
-                    <article>
-                        <div class="thumbnail"><img src="../../../public/img/LOL2.jpg" alt="Lol2"></div>
-                        <h3>유튜브</h3>
-                        <h3>떴다! 8.16 패치노트</h3>
-                    </article>
-                    <article>
-                        <div class="thumbnail"><img src="../../../public/img/LOL3.jpg" alt="Lol3"></div>
-                        <h3>블로그</h3>
-                        <h3>라이엇게임즈, 롤을 잇는 후속작은 MMO?</h3>
-                    </article>
-                    <router-link v-bind:to="'/game/'+ games[2]" exact class="Paging">
-                        <img src="../../../public/img/화살표.png" alt="right">
-                    </router-link>
-                </div>
-            </div>
-        </section>
-        <section class="Game mt">
-            <div class="container">
-                <div class="Game_logo LOL clearfix">
-                    <img src="../../../public/img/하스스톤.png" alt="하스스톤">
-                    <h3>하스스톤</h3>
-                </div>
-                <div class="row clearfix">
-                    <article>
-                        <div class="thumbnail"><img src="../../../public/img/LOL1.jpg" alt="Lol1"></div>
-                        <h3>뉴스</h3>
-                        <h3>눈길 가는 이색 종목</h3>
-                    </article>
-                    <article>
-                        <div class="thumbnail"><img src="../../../public/img/LOL2.jpg" alt="Lol2"></div>
-                        <h3>유튜브</h3>
-                        <h3>떴다! 8.16 패치노트</h3>
-                    </article>
-                    <article>
-                        <div class="thumbnail"><img src="../../../public/img/LOL3.jpg" alt="Lol3"></div>
-                        <h3>블로그</h3>
-                        <h3>라이엇게임즈, 롤을 잇는 후속작은 MMO?</h3>
-                    </article>
-                    <router-link v-bind:to="'/game/'+ games[3]" exact class="Paging">
-                        <img src="../../../public/img/화살표.png" alt="right">
-                    </router-link>
-                </div>
-            </div>
-        </section>
-        <section class="Game greyground mt">
-            <div class="container">
-                <div class="Game_logo LOL clearfix">
-                    <img src="../../../public/img/fifaonline.jpg" alt="FIFA">
-                    <h3>피파온라인</h3>
-                </div>
-                <div class="row clearfix">
-                    <article>
-                        <div class="thumbnail"><img src="../../../public/img/LOL1.jpg" alt="Lol1"></div>
-                        <h3>뉴스</h3>
-                        <h3>눈길 가는 이색 종목</h3>
-                    </article>
-                    <article>
-                        <div class="thumbnail"><img src="../../../public/img/LOL2.jpg" alt="Lol2"></div>
-                        <h3>유튜브</h3>
-                        <h3>떴다! 8.16 패치노트</h3>
-                    </article>
-                    <article>
-                        <div class="thumbnail"><img src="../../../public/img/LOL3.jpg" alt="Lol3"></div>
-                        <h3>블로그</h3>
-                        <h3>라이엇게임즈, 롤을 잇는 후속작은 MMO?</h3>
-                    </article>
-                    <router-link v-bind:to="'/game/'+ games[4]" exact class="Paging">
-                        <img src="../../../public/img/화살표.png" alt="right">
-                    </router-link>
-                </div>
-            </div>
-        </section>
-        <section class="Game mt">
-            <div class="container">
-                <div class="Game_logo LOL clearfix">
-                    <img src="../../../public/img/pubg.jpg" alt="PUBG">
-                    <h3>이달의 게임</h3>
-                </div>
-                <div class="row clearfix">
-                    <article>
-                        <div class="thumbnail"><img src="../../../public/img/LOL1.jpg" alt="Lol1"></div>
-                        <h3>뉴스</h3>
-                        <h3>눈길 가는 이색 종목</h3>
-                    </article>
-                    <article>
-                        <div class="thumbnail"><img src="../../../public/img/LOL2.jpg" alt="Lol2"></div>
-                        <h3>유튜브</h3>
-                        <h3>떴다! 8.16 패치노트</h3>
-                    </article>
-                    <article>
-                        <div class="thumbnail"><img src="../../../public/img/LOL3.jpg" alt="Lol3"></div>
-                        <h3>블로그</h3>
-                        <h3>라이엇게임즈, 롤을 잇는 후속작은 MMO?</h3>
-                    </article>
-                    <router-link to="'/blog/'+ 1" exact class="Paging">
-                        <img src="../../../public/img/화살표.png" alt="right">
-                    </router-link>
-                </div>
-            </div>
-        </section>
+            <h3>{{each_dic_data.title}}</h3>
+            <h3>{{each_dic_data.content}}</h3>
+          </article>
+          <router-link v-bind:to="'/game/' + each_dic.name" exact class="Paging">
+            <img src="../../../public/img/화살표.png" alt="right" />
+          </router-link>
+        </div>
+      </div>
     </section>
-    <!--//main-->
+  </section>
+  <!--//main-->
 </template>
 
 <script>
 export default {
- name: "homemain",
- computed:{
-  games(){
-   return this.$store.state.games;
+  name: "homemain",
+  data() {
+    return {
+      games: "",
+      all_res_include_data: ""
+    };
+  },
+  created() {
+    this.$http
+      .get("http://127.0.0.1:8000/aftergamesapi/gamelist")
+      .then(function(data) {
+        this.games = data.body;
+      });
+    this.$http
+      .get("http://127.0.0.1:8000/aftergamesapi/homeapi")
+      .then(function(data) {
+        this.all_res_include_data = data.body;
+      });
   }
- },
- created(){
-   console.log(this.games);
- }
-}
+};
 </script>
 <style lang="scss" scoped>
-    @import "../../../public/scss/main";
+@import "../../../public/scss/main";
 </style>

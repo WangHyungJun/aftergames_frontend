@@ -13,6 +13,11 @@
     padding-top: 25px;
     width: 100%;
 
+    &:nth-child(2n+0){
+      background: $maingreybackground;
+      margin-top: 25px;
+    }
+
     .container{
       width: 820px;
       box-sizing: border-box;
@@ -34,6 +39,7 @@
           font-weight: bold;
           height: 35px;
           line-height: 35px;
+          margin-left: 60px;
         }
       }
 
@@ -68,17 +74,13 @@
         img{
           display: block;
           width: 75.48px;
-          height: 179.62px;
+          height: 135px;
           -webkit-border-radius: 8px;
           -moz-border-radius: 8px;
           border-radius: 8px;
         }
       }
     }
-  }
-  .Game.greyground.mt{
-    background: $maingreybackground;
-    margin-top: 25px;
   }
 }
 

@@ -21,8 +21,6 @@
 </template>
 
 <script>
-import { bus } from '../../main';
-
 export default {
   name: "loginmain",
   data() {
@@ -55,12 +53,6 @@ export default {
           }
         });
     }
-  },
-  created() {
-    localStorage.setItem("t", "e70bd149b4ac720bb37673cfec5a38143bc9a594");
-  },
-  beforeUpdate() {
-    console.log(this.$store.state.token);
   }
 };
 </script>

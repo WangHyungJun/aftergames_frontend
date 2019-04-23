@@ -5,12 +5,14 @@ import LogIn from "./views/login";
 import SignUp from "./views/signup";
 import game from "./views/game";
 import blog from "./views/blog";
+import game_rep from "./views/game_rep";
 
 Vue.use(Router);
 
 export default new Router({
   mode: "history",
   base: process.env.BASE_URL,
+  props: true,
   routes: [
     {
       path: "/",
@@ -37,7 +39,7 @@ export default new Router({
       component: SignUp
     },
     {
-      path: "/game/:id",
+      path: "/game/:id/:page",
       name: "game",
       component: game
     },
@@ -45,6 +47,11 @@ export default new Router({
       path: "/blog/:id",
       name: "blog",
       component: blog
+    },
+    {
+      path: "/game/:id",
+      name: "game_rep",
+      component: game_rep,
     }
   ]
 });

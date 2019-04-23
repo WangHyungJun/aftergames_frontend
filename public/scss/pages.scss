@@ -13,6 +13,10 @@
       display: block;
       float: left;
       width: (100%/5);
+
+      &.router-link-exact-active {
+        color: $navmadarine;
+      }
     }
   }
   .pages_arrows{

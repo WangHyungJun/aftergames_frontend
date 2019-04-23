@@ -1,7 +1,7 @@
 @import "variables";
 @import "reset";
 
-#nav{
+#appnav{
   width: 100%;
   height: 56px;
   margin: 0 auto;
@@ -43,7 +43,11 @@
           line-height: 48px;
           width: 100%;
 
-          &.router-link-exact-active{
+          //&.router-link-exact-active{
+          //  border-bottom: 1px solid $navmadarine;
+          //  color: $navmadarine;
+          //}
+          &.router-link-active{
             border-bottom: 1px solid $navmadarine;
             color: $navmadarine;
           }
@@ -81,7 +85,7 @@
 }
 
 @media (max-width: 1024px) {
-  #nav{
+  #appnav{
     display: none;
   }
 }

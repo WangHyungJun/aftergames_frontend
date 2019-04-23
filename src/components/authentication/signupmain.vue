@@ -112,9 +112,6 @@ export default {
     },
     ...mapActions(["validateEmail"])
   },
-  created(){
-    console.log(this.$store.state.token);
-  },
   beforeUpdate() {
     if (this.loginform.email !== "") {
       this.validateEmail(this.loginform.email).then(res => {
@@ -141,7 +138,6 @@ export default {
       this.nicknameerror = "";
     }
   },
-
   updated() {
     const email_input = this.$refs.email_input;
     const pw_input = this.$refs.pw_input;

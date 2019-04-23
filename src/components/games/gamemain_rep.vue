@@ -3,7 +3,7 @@
     <section class="Game">
       <div class="Game_logo LOL clearfix">
         <img v-bind:src="game_infors.logo" alt="리그오브레전드" />
-        <h3>{{this.game_infors.kor_name}}</h3>
+        <h3>{{ this.game_infors.kor_name }}</h3>
       </div>
       <div class="filter">
         <select v-model="selected" @change="onchange">
@@ -37,7 +37,7 @@
 import pages from "../all/pages";
 
 export default {
-  name: "gamemain.vue",
+  name: "gamemain_rep",
   components: {
     pages: pages
   },
@@ -46,7 +46,7 @@ export default {
       id: this.$route.params.id,
       game_postings: "",
       selected: "",
-      current_page: this.$route.params.page,
+      current_page: 1,
       last_lst: [],
       max_page: 0,
       game_infors: ""
@@ -107,11 +107,17 @@ export default {
           this.max_page = data.body["max_page"];
           this.last_lst = data.body["last_lst"];
         });
+      this.$http
+        .get("http://127.0.0.1:8000/aftergamesapi/gameone", {
+          params: { game: this.id }
+        })
+        .then(function(data) {
+          this.game_infors = data.body[0];
+        });
     }
   }
 };
 </script>
 <style lang="scss" scoped>
 @import "../../../public/scss/lolmain";
-/*@import "../../../public/scss/pages";*/
 </style>

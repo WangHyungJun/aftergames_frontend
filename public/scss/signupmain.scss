@@ -41,8 +41,9 @@
       display: block;
       width: 94px;
       height: 36px;
+      font-size: 14px;
       text-align: center;
-      padding-top: 8px;
+      padding-top: 13px;
       color: $navmadarine;
       background: $buttonbackgroundcolor;
     }
@@ -53,7 +54,7 @@
   #main{
     .signupform{
       width: 300px;
-      
+
       .item{
         label{
           width: 100px;

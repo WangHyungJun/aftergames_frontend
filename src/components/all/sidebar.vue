@@ -9,23 +9,9 @@
     </div>
     <div class="game_menu">
       <ul>
-        <li v-on:click="hidebar">
-          <img src="../../../public/img/LOL.jpg" alt="LOL" />
-          <router-link v-bind:to="'/game/' + games[1]" exact>LOL</router-link>
-        </li>
-        <li v-on:click="hidebar">
-          <img src="../../../public/img/pubg.jpg" alt="pubg" />
-          <router-link v-bind:to="'/game/' + games[2]" exact>PUBG</router-link>
-        </li>
-        <li v-on:click="hidebar">
-          <img src="../../../public/img/fifaonline.jpg" alt="fifa" />
-          <router-link v-bind:to="'/game/' + games[3]" exact>FIFA</router-link>
-        </li>
-        <li v-on:click="hidebar">
-          <img src="../../../public/img/하스스톤.png" alt="하스스톤" />
-          <router-link v-bind:to="'/game/' + games[4]" exact
-            >Hearh Stone</router-link
-          >
+        <li v-on:click="hidebar" v-for="game in games">
+          <img v-bind:src="game.logo" v-bind:alt="game.kor_name" />
+          <router-link v-bind:to="'/game/' + game.name" exact>{{game.name}}</router-link>
         </li>
         <li v-on:click="hidebar">
           <img src="../../../public/img/aftergameslogo.png" alt="After Games" />
@@ -43,7 +29,7 @@ export default {
   name: "sidebar",
   data() {
     return {
-      games: ["recommendation", "lol", "pubg", "fifa", "hearthstone"]
+      games: ""
     };
   },
   mounted() {
@@ -56,6 +42,13 @@ export default {
     hidebar: function() {
       this.$refs.aside.style.transform = "translateX(-304px)";
     }
+  },
+  created() {
+    this.$http
+      .get("http://127.0.0.1:8000/aftergamesapi/gamelist")
+      .then(function(data) {
+        this.games = data.body.slice(0, 4);
+      });
   }
 };
 </script>

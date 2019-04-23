@@ -47,7 +47,8 @@
       margin-top: 55px;
 
       .row {
-        article {
+        a {
+          display: block;
           float: left;
           margin-right: 34.61px;
           margin-left: 34.61px;
@@ -138,7 +139,7 @@
 
       .container{
         .row{
-          article{
+          a{
             margin-right: 17.43px;
             margin-left: 17.43px;
             width:calc((100% - 140px)/4);
@@ -177,7 +178,7 @@
     .Game{
       .container{
         .row{
-          article{
+          a{
             width:calc((100% - 70px)/2);
             height: 160.49px;
             box-sizing: border-box;
