@@ -11,10 +11,14 @@
             <div class="thumbnail">
               <img v-bind:src="each_dic_data.thumbnail" alt="Lol1" />
             </div>
-            <h3>{{each_dic_data.title}}</h3>
-            <h3>{{each_dic_data.content}}</h3>
+            <h3>{{ each_dic_data.title }}</h3>
+            <h3>{{ each_dic_data.content }}</h3>
           </article>
-          <router-link v-bind:to="'/game/' + each_dic.name" exact class="Paging">
+          <router-link
+            v-bind:to="'/game/' + each_dic.name"
+            exact
+            class="Paging"
+          >
             <img src="../../../public/img/화살표.png" alt="right" />
           </router-link>
         </div>
@@ -33,14 +37,14 @@ export default {
       all_res_include_data: ""
     };
   },
+  computed: {
+     base_url() {
+      return this.$store.state.base_url;
+    }
+  },
   created() {
     this.$http
-      .get("https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/gamelist")
-      .then(function(data) {
-        this.games = data.body;
-      });
-    this.$http
-      .get("https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/homeapi")
+      .get(this.base_url + "/aftergamesapi/homeapi")
       .then(function(data) {
         this.all_res_include_data = data.body;
       });

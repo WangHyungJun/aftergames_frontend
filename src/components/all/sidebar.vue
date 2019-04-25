@@ -11,7 +11,9 @@
       <ul>
         <li v-on:click="hidebar" v-for="game in games">
           <img v-bind:src="game.logo" v-bind:alt="game.kor_name" />
-          <router-link v-bind:to="'/game/' + game.name" exact>{{game.name}}</router-link>
+          <router-link v-bind:to="'/game/' + game.name" exact>{{
+            game.name
+          }}</router-link>
         </li>
         <li v-on:click="hidebar">
           <img src="../../../public/img/aftergameslogo.png" alt="After Games" />
@@ -32,6 +34,11 @@ export default {
       games: ""
     };
   },
+  computed: {
+    base_url() {
+      return this.$store.state.base_url;
+    }
+  },
   mounted() {
     var com = this.$refs.aside;
     bus.$on("showside", function() {
@@ -45,9 +52,11 @@ export default {
   },
   created() {
     this.$http
-      .get("https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/gamelist")
+      .get(
+          this.base_url+"/aftergamesapi/sidebarlist"
+      )
       .then(function(data) {
-        this.games = data.body.slice(0, 4);
+        this.games = data.body;
       });
   }
 };

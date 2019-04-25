@@ -27,9 +27,9 @@ export default {
   },
   created() {
     this.$http
-      .get("https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/gamelist")
+      .get("http://127.0.0.1:8000/aftergamesapi/gamelist")
       .then(function(data) {
-        this.games = data.body.slice(0,4);
+        this.games = data.body;
       });
   }
 };

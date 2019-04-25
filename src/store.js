@@ -7,7 +7,8 @@ export default new Vuex.Store({
   state: {
     games: ["recommendation", "lol", "pubg", "fifa", "hearthstone"],
     nickname: localStorage.getItem("nickname"),
-    token: localStorage.getItem("token")
+    token: localStorage.getItem("token"),
+    base_url: "http://127.0.0.1:8000"
   },
   mutations: {
 
