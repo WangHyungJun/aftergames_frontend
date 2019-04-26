@@ -70,8 +70,7 @@ export default {
             localStorage.setItem("token", token);
             const username = data.body["username"];
             localStorage.setItem("nickname", username);
-            this.$router.push({ name: "home" });
-            this.$forceUpdate();
+            this.$router.replace({ name: "home" });
           }
         });
     },
