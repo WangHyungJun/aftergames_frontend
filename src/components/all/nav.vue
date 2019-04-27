@@ -4,7 +4,7 @@
       <ul class="clearfix">
         <li><router-link to="/" exact>HOME</router-link></li>
         <li>
-          <router-link to="/blog/" exact>이달의 게임</router-link>
+          <router-link to="/blog/">이달의 게임</router-link>
         </li>
         <li v-for="game in games">
           <router-link v-bind:to="'/game/' + game.name">{{
@@ -51,7 +51,6 @@ export default {
           });
         }
       } else if (this.$route.path === "/") {
-
         if (this.re_search) {
           bus.$emit("onResearch", this.search);
         } else {
@@ -65,7 +64,16 @@ export default {
         }
       } else {
         // 블로그 페이지 검색 결과
-        console.log("블로그 페이지 검색결과이에요.");
+        if (this.re_search) {
+          bus.$emit("onResearch", this.search);
+        } else {
+          this.$router.replace({
+            name: "articlesearch",
+            params: {
+              search: this.search
+            }
+          });
+        }
       }
     }
   },
