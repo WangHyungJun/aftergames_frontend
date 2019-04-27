@@ -34,6 +34,11 @@ export default {
       re_search: false
     };
   },
+  computed: {
+    base_url() {
+      return this.$store.state.base_url;
+    }
+  },
   methods: {
     searchsubmit: function(e) {
       e.preventDefault();
@@ -80,7 +85,7 @@ export default {
   created() {
     this.game = this.$route.params.id;
     this.$http
-      .get("http://127.0.0.1:8000/aftergamesapi/gamelist")
+      .get(this.base_url+"/aftergamesapi/gamelist")
       .then(function(data) {
         this.games = data.body;
       });

@@ -5,7 +5,6 @@
         v-for="page in init_lst"
         v-bind:to="'/game/' + gameid + '/' + page"
         exact
-        replace
         >{{ page }}</router-link
       >
     </div>
@@ -42,7 +41,9 @@ export default {
         for (i = 0; i < this.init_lst.length; i++) {
           temp_lst.push(this.init_lst[i] + 5);
         }
+        console.log(temp_lst);
         this.init_lst = temp_lst;
+        this.$forceUpdate();
       } else {
         this.init_lst = this.last_lst;
       }

@@ -39,7 +39,6 @@ export default {
   name: "loginmain",
   data() {
     return {
-      url: "https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/login",
       email: "",
       password: "",
       defaultshow: true,

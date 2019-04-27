@@ -52,30 +52,29 @@ export default {
       game_infors: ""
     };
   },
+  computed: {
+    base_url() {
+      return this.$store.state.base_url;
+    }
+  },
   methods: {
     onchange: function(e) {
       const selected = this.selected;
       e.preventDefault();
       if (selected !== "" && selected !== "필터") {
         this.$http
-          .post(
-            "https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/games",
-            {
-              filter: selected,
-              game: this.id
-            }
-          )
+          .post(this.base_url + "/aftergamesapi/games", {
+            filter: selected,
+            game: this.id
+          })
           .then(function(data) {
             this.game_postings = data.body;
           });
       } else {
         this.$http
-          .post(
-            "https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/games",
-            {
-              game: this.id
-            }
-          )
+          .post(this.base_url + "/aftergamesapi/games", {
+            game: this.id
+          })
           .then(function(data) {
             this.game_postings = data.body;
           });
@@ -84,24 +83,18 @@ export default {
   },
   created() {
     this.$http
-      .get(
-        "https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/games",
-        {
-          params: { game: this.id, page: this.current_page }
-        }
-      )
+      .get(this.base_url + "/aftergamesapi/games", {
+        params: { game: this.id, page: this.current_page }
+      })
       .then(function(data) {
         this.game_postings = data.body["data"];
         this.max_page = data.body["max_page"];
         this.last_lst = data.body["last_lst"];
       });
     this.$http
-      .get(
-        "https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/gameone",
-        {
-          params: { game: this.id }
-        }
-      )
+      .get(this.base_url + "/aftergamesapi/gameone", {
+        params: { game: this.id }
+      })
       .then(function(data) {
         this.game_infors = data.body[0];
       });
@@ -111,24 +104,18 @@ export default {
       this.id = to.params.id;
       this.current_page = to.params.page;
       this.$http
-        .get(
-          "https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/games",
-          {
-            params: { game: this.id, page: this.current_page }
-          }
-        )
+        .get(this.base_url + "/aftergamesapi/games", {
+          params: { game: this.id, page: this.current_page }
+        })
         .then(function(data) {
           this.game_postings = data.body["data"];
           this.max_page = data.body["max_page"];
           this.last_lst = data.body["last_lst"];
         });
       this.$http
-        .get(
-          "https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/gameone",
-          {
-            params: { game: this.id }
-          }
-        )
+        .get(this.base_url + "/aftergamesapi/gameone", {
+          params: { game: this.id }
+        })
         .then(function(data) {
           this.game_infors = data.body[0];
         });

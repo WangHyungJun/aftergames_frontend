@@ -61,7 +61,7 @@ export default {
       if (selected !== "" && selected !== "필터") {
         this.$http
           .post(
-            "https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/games",
+            this.base_url + "/aftergamesapi/games",
             {
               filter: selected,
               game: this.id
@@ -73,7 +73,7 @@ export default {
       } else {
         this.$http
           .post(
-            "https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/games",
+            this.base_url+"/aftergamesapi/games",
             {
               game: this.id
             }
@@ -93,7 +93,6 @@ export default {
         }
       )
       .then(function(data) {
-        console.log(data);
         this.articles = data.body["data"];
       });
   },
@@ -103,7 +102,7 @@ export default {
       this.current_page = to.params.page;
       this.$http
         .get(
-          "https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/games",
+          this.base_url+"/aftergamesapi/games",
           {
             params: { game: this.id, page: this.current_page }
           }
@@ -115,7 +114,7 @@ export default {
         });
       this.$http
         .get(
-          "https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/gameone",
+          this.base_url+"/aftergamesapi/gameone",
           {
             params: { game: this.id }
           }

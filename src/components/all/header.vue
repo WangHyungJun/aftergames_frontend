@@ -45,7 +45,6 @@ export default {
   },
   methods: {
     init: function() {
-      console.log(this.nickname);
       if (this.nickname !== null) {
         this.signupshow = false;
         this.loginshow = false;

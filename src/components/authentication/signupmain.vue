@@ -47,7 +47,6 @@ export default {
   name: "signupmain",
   data() {
     return {
-      apiurl: "https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/users",
       loginform: {
         email: "",
         nickname: "",
@@ -61,6 +60,11 @@ export default {
       passwordcheckerror: "",
       signupprocess: false
     };
+  },
+  computed: {
+    base_url() {
+      return this.$store.state.base_url;
+    }
   },
   methods: {
     submit: function(e) {
@@ -92,7 +96,7 @@ export default {
         this.nicknameerror === ""
       ) {
         this.$http
-          .post(this.apiurl, {
+          .post(this.base_url+"/aftergamesapi/users", {
             email: this.loginform.email,
             username: this.loginform.nickname,
             password: this.loginform.password,

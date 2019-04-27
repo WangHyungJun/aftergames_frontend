@@ -10,9 +10,14 @@ export default {
       blog_content: ""
     };
   },
+  computed: {
+    base_url() {
+      return this.$store.state.base_url;
+    }
+  },
   created() {
     this.$http
-      .get("http://127.0.0.1:8000/aftergamesapi/articledetail", {
+      .get(this.base_url+"/aftergamesapi/articledetail", {
         params: { id: this.$route.params.id }
       })
       .then(function(data) {
