@@ -7,6 +7,7 @@ import game from "./views/game";
 import blog from "./views/blog";
 import game_rep from "./views/game_rep";
 import blogarticle from "./views/blogarticle";
+import gamesearch from "./views/game_search";
 
 Vue.use(Router);
 
@@ -45,7 +46,7 @@ export default new Router({
       component: game
     },
     {
-      path: "/blog/:id",
+      path: "/blog/",
       name: "blog",
       component: blog
     },
@@ -58,6 +59,11 @@ export default new Router({
       path: "/article/:id",
       name: "blogarticle",
       component: blogarticle
+    },
+    {
+      path: "/game/:id/search/:search",
+      name: "gamesearch",
+      component: gamesearch
     }
   ]
 });

@@ -1,103 +1,133 @@
 <template>
- <div id="blogmain">
+  <div id="blogmain">
     <section class="main clearfix">
-        <section class="logo_filter">
-            <div class="logo clearfix">
-                <img src="../../../public/img/aftergameslogo.png" alt="이달의게임">
-                <h3>이달의 게임</h3>
-            </div>
-            <div class="filter clearfix">
-                <select>
-                    <option>필터</option>
-                    <option>실력향상</option>
-                    <option>핫이슈</option>
-                    <option>기타</option>
-                </select>
-            </div>
-        </section>
-        <section class="articles clearfix">
-            <article class="clearfix">
-                <div class="thumbnail">
-                    <img src="../../../public/img/redman.png" alt="redman"/>
-                </div>
-                <div class="article_content">
-                    <h1>[AG 프리뷰] 눈길 가는 이색종목</h1>
-                    <h3>'트라이얼 라이징'은 핀란드의 회사 레드링스의 간판 레이싱 게임6탄이다. 은비 소프트 산하로 들어간 후, 전작 '트라이얼 퓨전부터 한국어화가 되지 않은 점은 아쉽지만 멀티플랫폼으로 출시되어 보다 많은 유저가 이 시리즈 매력에 빠질 수 있게 되었다.</h3>
-                    <div class="article_date">2019. 01. 29</div>
-                </div>
-            </article>
-            <article class="clearfix">
-                <div class="thumbnail">
-                    <img src="../../../public/img/redman.png" alt="redman"/>
-                </div>
-                <div class="article_content">
-                    <h1>[AG 프리뷰] 눈길 가는 이색종목</h1>
-                    <h3>'트라이얼 라이징'은 핀란드의 회사 레드링스의 간판 레이싱 게임6탄이다. 은비 소프트 산하로 들어간 후, 전작 '트라이얼 퓨전부터 한국어화가 되지 않은 점은 아쉽지만 멀티플랫폼으로 출시되어 보다 많은 유저가 이 시리즈 매력에 빠질 수 있게 되었다.</h3>
-                    <div class="article_date">2019. 01. 29</div>
-                </div>
-            </article>
-            <article class="clearfix">
-                <div class="thumbnail">
-                    <img src="../../../public/img/redman.png" alt="redman"/>
-                </div>
-                <div class="article_content">
-                    <h1>[AG 프리뷰] 눈길 가는 이색종목</h1>
-                    <h3>'트라이얼 라이징'은 핀란드의 회사 레드링스의 간판 레이싱 게임6탄이다. 은비 소프트 산하로 들어간 후, 전작 '트라이얼 퓨전부터 한국어화가 되지 않은 점은 아쉽지만 멀티플랫폼으로 출시되어 보다 많은 유저가 이 시리즈 매력에 빠질 수 있게 되었다.</h3>
-                    <div class="article_date">2019. 01. 29</div>
-                </div>
-            </article>
-            <article class="clearfix">
-                <div class="thumbnail">
-                    <img src="../../../public/img/redman.png" alt="redman"/>
-                </div>
-                <div class="article_content">
-                    <h1>[AG 프리뷰] 눈길 가는 이색종목</h1>
-                    <h3>'트라이얼 라이징'은 핀란드의 회사 레드링스의 간판 레이싱 게임6탄이다. 은비 소프트 산하로 들어간 후, 전작 '트라이얼 퓨전부터 한국어화가 되지 않은 점은 아쉽지만 멀티플랫폼으로 출시되어 보다 많은 유저가 이 시리즈 매력에 빠질 수 있게 되었다.</h3>
-                    <div class="article_date">2019. 01. 29</div>
-                </div>
-            </article>
-            <article class="clearfix">
-                <div class="thumbnail">
-                    <img src="../../../public/img/redman.png" alt="redman"/>
-                </div>
-                <div class="article_content">
-                    <h1>[AG 프리뷰] 눈길 가는 이색종목</h1>
-                    <h3>'트라이얼 라이징'은 핀란드의 회사 레드링스의 간판 레이싱 게임6탄이다.
-                        은비 소프트 산하로 들어간 후, 전작 '트라이얼 퓨전부터 한국어화가 되지 않은 점은 아쉽지만
-                        멀티플랫폼으로 출시되어 보다 많은 유저가 이 시리즈 매력에 빠질 수 있게 되었다.</h3>
-                    <div class="article_date">2019. 01. 29</div>
-                </div>
-            </article>
-            <article class="clearfix">
-                <div class="thumbnail">
-                    <img src="../../../public/img/redman.png" alt="redman"/>
-                </div>
-                <div class="article_content">
-                    <h1>[AG 프리뷰] 눈길 가는 이색종목</h1>
-                    <h3>'트라이얼 라이징'은 핀란드의 회사 레드링스의 간판 레이싱 게임6탄이다. 은비 소프트 산하로 들어간 후, 전작 '트라이얼 퓨전부터 한국어화가 되지 않은 점은 아쉽지만 멀티플랫폼으로 출시되어 보다 많은 유저가 이 시리즈 매력에 빠질 수 있게 되었다.</h3>
-                    <div class="article_date">2019. 01. 29</div>
-                </div>
-            </article>
-        </section>
+      <section class="logo_filter">
+        <div class="logo clearfix">
+          <img src="../../../public/img/aftergameslogo.png" alt="이달의게임" />
+          <h3>이달의 게임</h3>
+        </div>
+        <div class="filter clearfix">
+          <select v-model="selected" @change="onchange">
+            <option value="">필터</option>
+            <option>실력향상</option>
+            <option>핫이슈</option>
+            <option>기타</option>
+          </select>
+        </div>
+      </section>
+      <section class="articles clearfix">
+        <article class="clearfix" v-for="article in articles">
+          <div class="thumbnail">
+            <img v-bind:src="article.thumbnail" alt="redman" />
+          </div>
+          <div class="article_content">
+            <h1>{{article.title}}</h1>
+            <h3>{{article.rep_content}}</h3>
+            <div class="article_date">{{article.date}}</div>
+          </div>
+        </article>
+      </section>
     </section>
     <pages></pages>
- </div>
+  </div>
 </template>
 
 <script>
-    import pages from "../all/pages"
+import pages from "../all/pages";
 
-    export default {
-        name: "blogmain",
-        components: {
-            'pages': pages
-        },
-        created(){
-        }
+export default {
+  name: "blogmain",
+  components: {
+    pages: pages
+  },
+  data() {
+    return {
+      articles: "",
+      selected: "",
+      current_page: 1,
+      last_lst: [],
+      max_page: 0
+    };
+  },
+  computed: {
+    base_url() {
+      return this.$store.state.base_url;
     }
+  },
+  methods: {
+    onchange: function(e) {
+      const selected = this.selected;
+      e.preventDefault();
+      if (selected !== "" && selected !== "필터") {
+        this.$http
+          .post(
+            "https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/games",
+            {
+              filter: selected,
+              game: this.id
+            }
+          )
+          .then(function(data) {
+            this.game_postings = data.body;
+          });
+      } else {
+        this.$http
+          .post(
+            "https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/games",
+            {
+              game: this.id
+            }
+          )
+          .then(function(data) {
+            this.game_postings = data.body;
+          });
+      }
+    }
+  },
+  created() {
+    this.$http
+      .get(
+        this.base_url + "/aftergamesapi/article",
+        {
+          params: { page: this.current_page }
+        }
+      )
+      .then(function(data) {
+        console.log(data);
+        this.articles = data.body["data"];
+      });
+  },
+  watch: {
+    $route(to, from) {
+      this.id = to.params.id;
+      this.current_page = to.params.page;
+      this.$http
+        .get(
+          "https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/games",
+          {
+            params: { game: this.id, page: this.current_page }
+          }
+        )
+        .then(function(data) {
+          this.game_postings = data.body["data"];
+          this.max_page = data.body["max_page"];
+          this.last_lst = data.body["last_lst"];
+        });
+      this.$http
+        .get(
+          "https://www.aftergames-api-hopeforsuccess.com/aftergamesapi/gameone",
+          {
+            params: { game: this.id }
+          }
+        )
+        .then(function(data) {
+          this.game_infors = data.body[0];
+        });
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
 @import "../../../public/scss/blogmain";
-
 </style>

@@ -8,7 +8,7 @@ export default new Vuex.Store({
     games: ["recommendation", "lol", "pubg", "fifa", "hearthstone"],
     nickname: localStorage.getItem("nickname"),
     token: localStorage.getItem("token"),
-    base_url: "https://www.aftergames-api-hopeforsuccess.com"
+    base_url: "http://127.0.0.1:8000"
   },
   mutations: {
 
