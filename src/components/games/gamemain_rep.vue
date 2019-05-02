@@ -8,9 +8,7 @@
       <div class="filter">
         <select v-model="selected" @change="onchange">
           <option value="">필터</option>
-          <option>실력향상</option>
-          <option>핫이슈</option>
-          <option>기타</option>
+          <option v-for="filter in filters">{{ filter.filter }}</option>
         </select>
       </div>
       <div class="container">
@@ -49,7 +47,8 @@ export default {
       current_page: 1,
       last_lst: [],
       max_page: 0,
-      game_infors: ""
+      game_infors: "",
+      filters: ""
     };
   },
   computed: {
@@ -98,6 +97,13 @@ export default {
       .then(function(data) {
         this.game_infors = data.body[0];
       });
+    this.$http
+      .get(this.base_url + "/aftergamesapi/filters", {
+        params: { game: this.id }
+      })
+      .then(function(data) {
+        this.filters = data.body;
+      });
   },
   watch: {
     $route(to, from) {
@@ -118,6 +124,13 @@ export default {
         })
         .then(function(data) {
           this.game_infors = data.body[0];
+        });
+      this.$http
+        .get(this.base_url + "/aftergamesapi/filters", {
+          params: { game: this.id }
+        })
+        .then(function(data) {
+          this.filters = data.body;
         });
     }
   }

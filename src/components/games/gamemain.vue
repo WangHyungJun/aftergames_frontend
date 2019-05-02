@@ -8,9 +8,7 @@
       <div class="filter">
         <select v-model="selected" @change="onchange">
           <option value="">필터</option>
-          <option>실력향상</option>
-          <option>핫이슈</option>
-          <option>기타</option>
+          <option v-for="filter in filters">{{filter.filter}}</option>
         </select>
       </div>
       <div class="container">
@@ -49,7 +47,8 @@ export default {
       current_page: this.$route.params.page,
       last_lst: [],
       max_page: 0,
-      game_infors: ""
+      game_infors: "",
+      filters: ""
     };
   },
   computed: {
@@ -63,24 +62,18 @@ export default {
       e.preventDefault();
       if (selected !== "" && selected !== "필터") {
         this.$http
-          .post(
-            this.base_url+"/aftergamesapi/games",
-            {
-              filter: selected,
-              game: this.id
-            }
-          )
+          .post(this.base_url + "/aftergamesapi/games", {
+            filter: selected,
+            game: this.id
+          })
           .then(function(data) {
             this.game_postings = data.body;
           });
       } else {
         this.$http
-          .post(
-              this.base_url+"/aftergamesapi/games",
-            {
-              game: this.id
-            }
-          )
+          .post(this.base_url + "/aftergamesapi/games", {
+            game: this.id
+          })
           .then(function(data) {
             this.game_postings = data.body;
           });
@@ -89,26 +82,27 @@ export default {
   },
   created() {
     this.$http
-      .get(
-          this.base_url+"/aftergamesapi/games",
-        {
-          params: { game: this.id, page: this.current_page }
-        }
-      )
+      .get(this.base_url + "/aftergamesapi/games", {
+        params: { game: this.id, page: this.current_page }
+      })
       .then(function(data) {
         this.game_postings = data.body["data"];
         this.max_page = data.body["max_page"];
         this.last_lst = data.body["last_lst"];
       });
     this.$http
-      .get(
-          this.base_url+"/aftergamesapi/gameone",
-        {
-          params: { game: this.id }
-        }
-      )
+      .get(this.base_url + "/aftergamesapi/gameone", {
+        params: { game: this.id }
+      })
       .then(function(data) {
         this.game_infors = data.body[0];
+      });
+    this.$http
+      .get(this.base_url + "/aftergamesapi/filters", {
+        params: { game: this.id }
+      })
+      .then(function(data) {
+        this.filters = data.body;
       });
   },
   watch: {
@@ -116,12 +110,9 @@ export default {
       this.id = to.params.id;
       this.current_page = to.params.page;
       this.$http
-        .get(
-          this.base_url+"/aftergamesapi/games",
-          {
-            params: { game: this.id, page: this.current_page }
-          }
-        )
+        .get(this.base_url + "/aftergamesapi/games", {
+          params: { game: this.id, page: this.current_page }
+        })
         .then(function(data) {
           this.game_postings = data.body["data"];
           this.max_page = data.body["max_page"];
