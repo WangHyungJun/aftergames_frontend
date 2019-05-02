@@ -40,7 +40,8 @@ export default {
   data() {
     return {
       loginshow: true,
-      signupshow: true
+      signupshow: true,
+      nickname: localStorage.getItem("nickname")
     };
   },
   methods: {
@@ -58,15 +59,18 @@ export default {
       localStorage.removeItem("nickname");
       this.loginshow = true;
       this.signupshow = true;
+      this.$forceUpdate();
     }
   },
   computed: {
-    nickname() {
-      return this.$store.state.nickname;
-    }
   },
   created() {
     this.init();
+    bus.$on("loginsuccess", (data) => {
+      this.nickname = data;
+    });
+  },
+  watch: {
   }
 };
 </script>
