@@ -48,7 +48,7 @@ export default {
       last_lst: [],
       max_page: 0,
       game_infors: "",
-      filters: ""
+      filters: "",
     };
   },
   computed: {

@@ -22,9 +22,8 @@ export default {
   data() {
     return {
       last_page: "",
-      init_page: 1,
-      init_lst: [1, 2, 3, 4, 5],
-      temp_lst: []
+      init_page: "",
+      init_lst: ""
     };
   },
   methods: {
@@ -41,9 +40,7 @@ export default {
         for (i = 0; i < this.init_lst.length; i++) {
           temp_lst.push(this.init_lst[i] + 5);
         }
-        console.log(temp_lst);
         this.init_lst = temp_lst;
-        this.$forceUpdate();
       } else {
         this.init_lst = this.last_lst;
       }
@@ -53,6 +50,17 @@ export default {
         params: { game: this.gameid, page: this.init_lst[0] }
       });
     }
+  },
+  created(){
+    const page = this.$route.params.page;
+    if(page === 1 || page === undefined){
+      this.init_lst = [1, 2, 3, 4, 5];
+      this.init_page = 1;
+    } else {
+      this.init_lst = [6,7,8,9,10];
+      this.init_page = 6;
+    }
+    console.log(this.max_page);
   },
   watch: {
     // $route(to, from) {
@@ -67,7 +75,7 @@ export default {
       //   console.log("url changed and in a problem");
       //   var i;
       //   const quotient = Math.floor(current_page/5);
-      //   for (i = 0; i < 5; i++){
+      //   for (i = 0; i < 5; i++)
       //     current_page_lst[i] = 5*quotient + i+1;
       //   }
       // }
