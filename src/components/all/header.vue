@@ -5,7 +5,7 @@
         <section class="sub_header">
           <i v-on:click="showside" class="fas fa-ellipsis-v"></i>
           <div class="logo">
-            <img src="../../../public/img/aftergameslogo.png" />
+            <img src="../../../public/img/af.png" />
           </div>
           <div class="sub_detail">After games 설명글이 들어갈 자리</div>
           <div class="account">
@@ -24,7 +24,7 @@
     <section class="Logo">
       <div class="Logo_pic">
         <router-link to="/" exact
-          ><img src="../../../public/img/aftergameslogo.png"
+          ><img src="../../../public/img/afgamez.png"
         /></router-link>
       </div>
     </section>
@@ -62,15 +62,11 @@ export default {
       this.$forceUpdate();
     }
   },
-  computed: {
-  },
   created() {
     this.init();
     bus.$on("loginsuccess", (data) => {
       this.nickname = data;
     });
-  },
-  watch: {
   }
 };
 </script>

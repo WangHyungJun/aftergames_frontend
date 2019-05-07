@@ -5,6 +5,7 @@ import LogIn from "./views/login";
 import SignUp from "./views/signup";
 import game from "./views/game";
 import blog from "./views/blog";
+import blog_rep from "./views/blog_rep";
 import game_rep from "./views/game_rep";
 import blogarticle from "./views/blogarticle";
 import gamesearch from "./views/game_search";
@@ -48,6 +49,11 @@ export default new Router({
     },
     {
       path: "/blog/",
+      name: "blogrep",
+      component: blog_rep
+    },
+    {
+      path: "/blog/:page",
       name: "blog",
       component: blog
     },

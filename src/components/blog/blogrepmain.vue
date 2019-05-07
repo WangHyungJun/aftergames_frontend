@@ -51,9 +51,9 @@ export default {
     return {
       articles: "",
       selected: "",
-      current_page: this.$route.params.page,
+      current_page: 1,
       last_lst: [],
-      max_page: ""
+      max_page: 0
     };
   },
   computed: {

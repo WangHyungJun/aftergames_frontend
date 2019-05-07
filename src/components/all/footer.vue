@@ -2,11 +2,10 @@
     <footer id="footer">
         <div class="footer_content clearfix">
             <div class="footer_logo">
-                <img src="../../../public/img/aftergameslogo.png" alt="aftergames"/>
+                <img src="../../../public/img/af.png" alt="aftergames"/>
             </div>
             <div class="footer_terms">
                 <a href="#">회사소개 |</a>
-                <a href="#">제품안내 |</a>
                 <a href="#">이용약관 |</a>
                 <a href="#">개인정보처리방침 |</a>
                 <a href="#">운영정책</a>

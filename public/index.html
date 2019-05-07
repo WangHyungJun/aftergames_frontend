@@ -5,7 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="icon" href="<%= BASE_URL %>aftergameslogo.png">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
     <title>aftergames</title>
+    <style>
+        body{
+            font-family: 'Noto Sans KR' , sans-serif;
+        }
+        #articlecontent p{
+            font-size: 12px;
+            line-height: 19px;
+        }
+        #articlecontent p img{
+            display: block;
+            margin: 0 auto;
+            width: 521px;
+            height: 391px;
+        }
+        #articlecontent iframe{
+            width: 521px;
+            height: 391px;
+            margin: 0 auto;
+            display: block;
+        }
+        @media (max-width: 1024px){
+            #articlecontent iframe{
+                width: 100%;
+            }
+            #articlecontent p img{
+                width: 100%;
+            }
+        }
+        @media (max-width: 500px){
+            #articlecontent iframe{
+                height: 187px;
+            }
+            #articlecontent p img{
+                height: 187px;
+            }
+        }
+
+    </style>
   </head>
   <body>
     <noscript>

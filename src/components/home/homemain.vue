@@ -8,9 +8,9 @@
         </div>
         <div class="row clearfix">
           <article v-for="each_dic_data in each_dic.data">
-            <div class="thumbnail">
+            <a class="thumbnail" v-bind:href="each_dic_data.url">
               <img v-bind:src="each_dic_data.thumbnail" alt="Lol1" />
-            </div>
+            </a>
             <h3>{{ each_dic_data.title }}</h3>
             <h3>{{ each_dic_data.content }}</h3>
           </article>

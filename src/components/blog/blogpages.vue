@@ -1,12 +1,9 @@
 <template>
   <section class="pages">
     <div class="pages_number clearfix">
-      <router-link
-        v-for="page in init_lst"
-        v-bind:to="'/game/' + gameid + '/' + page"
-        exact
-        >{{ page }}</router-link
-      >
+      <router-link v-for="page in init_lst" v-bind:to="'/blog/' + page" exact>{{
+        page
+      }}</router-link>
     </div>
     <div class="pages_arrows clearfix">
       <a v-on:click="goonestep"><i class="fas fa-angle-right"></i></a>
@@ -18,7 +15,7 @@
 <script>
 export default {
   name: "pages",
-  props: ["gameid", "max_page", "last_lst"],
+  props: ["max_page", "last_lst"],
   data() {
     return {
       last_page: "",
@@ -46,22 +43,20 @@ export default {
       }
       this.init_page = this.init_lst[0];
       this.$router.replace({
-        name: "game",
-        params: { game: this.gameid, page: this.init_lst[0] }
+        name: "blog",
+        params: { page: this.init_lst[0]}
       });
     }
   },
-  created(){
+  created() {
     const page = this.$route.params.page;
-    if(page in [1, 2, 3, 4, 5] || page === undefined){
+    if (page in [1, 2, 3, 4, 5] || page === undefined) {
       this.init_lst = [1, 2, 3, 4, 5];
       this.init_page = 1;
     } else {
       this.init_lst = [6, 7, 8, 9, 10];
       this.init_page = 6;
     }
-  },
-  watch: {
   }
 };
 </script>
