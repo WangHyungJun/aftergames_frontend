@@ -18,13 +18,10 @@
         <div class="article_date">{{ this.nextarticle.date }}</div>
       </div>
     </router-link>
-    <pages></pages>
   </article>
 </template>
 
 <script>
-import pages from "../../components/all/pages";
-
 export default {
   data() {
     return {
@@ -33,9 +30,6 @@ export default {
       date: "",
       nextarticle: ""
     };
-  },
-  components: {
-    pages: pages
   },
   computed: {
     base_url() {
