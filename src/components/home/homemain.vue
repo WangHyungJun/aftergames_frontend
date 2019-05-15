@@ -12,7 +12,7 @@
               <img v-bind:src="each_dic_data.thumbnail" alt="Lol1" />
             </a>
             <h3>{{ each_dic_data.title }}</h3>
-            <h3>{{ each_dic_data.content }}</h3>
+            <h3>{{ each_dic_data.short_rep_content }}</h3>
           </article>
           <router-link
             v-bind:to="'/game/' + each_dic.name"
@@ -36,6 +36,7 @@
               <img v-bind:src="article.thumbnail" alt="Lol1" />
             </a>
             <h3>{{ article.title }}</h3>
+            <h3>{{ article.short_rep_content }}</h3>
           </article>
           <router-link
             to="/blog/"
