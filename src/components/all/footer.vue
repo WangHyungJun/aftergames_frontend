@@ -5,13 +5,13 @@
                 <img src="../../../public/img/af.png" alt="aftergames"/>
             </div>
             <div class="footer_terms">
-                <a href="#">회사소개 |</a>
-                <a href="#">이용약관 |</a>
-                <a href="#">개인정보처리방침 |</a>
-                <a href="#">운영정책</a>
+                <router-link to="/rules">회사소개 |</router-link>
+                <router-link to="/rules">이용약관 |</router-link>
+                <router-link to="/rules">개인정보처리방침 |</router-link>
+                <router-link to="/rules">운영정책</router-link>
             </div>
             <div class="footer_email">
-                Aftergames@gf.co.kr
+                help.afgamez@gmail.com
             </div>
         </div>
     </footer>

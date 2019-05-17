@@ -8,8 +8,9 @@ import blog from "./views/blog";
 import blog_rep from "./views/blog_rep";
 import game_rep from "./views/game_rep";
 import blogarticle from "./views/blogarticle";
-import gamesearch from "./views/game_search";
 import articlesearch from "./views/article_search";
+import gamesearch from "./views/game_search";
+import rules from "./views/rules";
 
 Vue.use(Router);
 
@@ -76,6 +77,11 @@ export default new Router({
       path: "/blog/search/:search",
       name: "articlesearch",
       component: articlesearch
+    },
+    {
+      path: "/rules",
+      name: "rules",
+      component: rules
     }
   ]
 });
