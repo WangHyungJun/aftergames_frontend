@@ -32,9 +32,9 @@
         </div>
         <div class="row clearfix">
           <article v-for="article in three_articles">
-            <a class="thumbnail">
+            <router-link v-bind:to="'/article/'+article.id" class="thumbnail">
               <img v-bind:src="article.thumbnail" alt="Lol1" />
-            </a>
+            </router-link>
             <h3>{{ article.title }}</h3>
             <h3>{{ article.short_rep_content }}</h3>
           </article>
